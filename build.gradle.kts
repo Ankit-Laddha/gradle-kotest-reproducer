@@ -11,7 +11,6 @@ plugins {
     id("org.jetbrains.kotlin.jvm") version "1.6.10"
     id("io.kotest") version "0.3.9"
     id("io.qameta.allure") version "2.8.1"
-    id("org.jlleitschuh.gradle.ktlint") version "10.2.1"
 }
 
 allure {
@@ -103,8 +102,4 @@ val test by tasks.getting(Test::class) {
 
 tasks.withType<KotlinCompile> {
     kotlinOptions.jvmTarget = "11"
-}
-
-tasks.withType(org.jlleitschuh.gradle.ktlint.tasks.BaseKtLintCheckTask::class.java).configureEach {
-    workerMaxHeapSize.set("1024m")
 }
